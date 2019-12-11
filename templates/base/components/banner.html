@@ -1,0 +1,28 @@
+	<!-- BANNER -->
+	<div class="section banner-page" data-background="/static/images/banner.jpg">
+		<div class="content-wrap pos-relative">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="d-flex bd-highlight mb-3">
+							<div class="title-page">{{ banner_page_name }}</div>
+						</div>
+						<div class="d-flex bd-highlight mb-3">
+						    <nav aria-label="breadcrumb">
+							  <ol class="breadcrumb ">
+							    <li class="breadcrumb-item"><a href="{% url 'index' %}">Anasayfa</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ banner_page_name }}</li>
+								{% if attorney_name %}
+								<li class="breadcrumb-item">{{ attorney_name }}</li>
+								{% endif %}
+								{% if practice_area_name %}
+								<li class="breadcrumb-item">{{ practice_area_name }}</li>
+								{% endif %}
+							  </ol>
+							</nav>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

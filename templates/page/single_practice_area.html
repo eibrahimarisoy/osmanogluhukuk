@@ -1,0 +1,120 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<!-- LOAD PAGE -->
+
+{% include "base/components/nav.html" %}
+{% include "base/components/banner.html" %}
+
+<!-- CONTENT -->
+<div class="section">
+	<div class="content-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-8">
+
+					<div class="row">
+						<div class="col-sm-12 col-md-12">
+							<img src="{{ practice_area.cover_image.url }}" alt="" class="img-fluid">
+						</div>
+					</div>
+
+					<div class="row mt-5">
+						<div class="col-sm-12 col-md-12">
+							<h2 class="section-heading">
+								{{ practice_area.title }}
+							</h2>
+							<p>{{ practice_area.content }}</p>
+
+							<a href="{% url 'contact' %}" class="btn btn-secondary">ÜCRETSİZ DANIŞIN</a>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-sm-12 col-md-12 col-lg-4">
+					<div class="widget categories">
+						<ul class="category-nav">
+							<li><a href="#" title="Family Law">Family Law</a></li>
+							<li><a href="#" title="Financial Law">Financial Law</a></li>
+							<li><a href="#" title="Sexual Offences">Sexual Offences</a></li>
+							<li><a href="#" title="Drug Offences">Drug Offences</a></li>
+							<li><a href="#" title="Fire Accident">Fire Accident</a></li>
+							<li><a href="#" title="Shoplifthing">Shoplifthing</a></li>
+						</ul>
+					</div>
+
+					<div class="widget">
+						<div class="rs-box-widget bg-secondary">
+							<div class="icon">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div class="body">
+								<h3>How Can We Help You?</h3>
+								<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+									fugiat nulla par- iatur.</p>
+								<a href="contact.html" class="text-primary">CONTACT US</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="widget">
+						<div class="rs-box-widget">
+							<div class="icon">
+								<i class="fa fa-file-pdf-o"></i>
+							</div>
+							<div class="body">
+								<h3>Download Brochure</h3>
+								<p>We always take care of clients seriously</p>
+								<a href="#" class="btn btn-primary">DOWNLOAD</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- End Sidebar -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- CTA -->
+<div class="section bg-primary">
+	<div class="content-wrap py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<div class="text-center text-white">
+						<h3>Ücretsiz Danışma Hattı : 0533 785 22 36</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

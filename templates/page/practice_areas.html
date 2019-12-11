@@ -1,0 +1,70 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<!-- LOAD PAGE -->
+
+{% include "base/components/nav.html" %}
+{% include "base/components/banner.html" %}
+
+
+
+
+<!-- HOW TO HELP US -->
+<div class="section">
+    <div class="content-wrap">
+        <div class="container">				
+            
+            <div class="row">
+                <!-- Item 1 -->
+                {% for practice_area in practice_areas %}
+                  
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="box-icon-1 text-center">
+                        <a href="{% url 'single_practice_area' practice_area.slug %}">
+                            <div class="icon">
+                                <i class="fa fa-fire"></i>
+                            </div>
+                            <div class="body-content">
+                                <h3>{{ practice_area.title }}</h3>
+                                <p>{{ practice_area.summary }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="section bg-primary">
+    <div class="content-wrap py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="text-center text-white">
+                        <h3>Ücretsiz Danışma Hattı : 0533 785 22 36</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,101 @@
+
+<!-- FOOTER SECTION -->
+<div class="footer" data-background="/static/images/dummy-img-1920x900-3.jpg">
+    <div class="content-wrap">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-item">
+                        <img src="/static/images/logo_w.png" alt="logo bottom" class="logo-bottom">
+                        <div class="spacer-30"></div>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                        <div class="sosmed-icon icon-bg-primary d-inline-flex">
+                            <a href="#"><i class="fa fa-facebook"></i></a> 
+                            <a href="#"><i class="fa fa-twitter"></i></a> 
+                            <a href="#"><i class="fa fa-instagram"></i></a> 
+                            <a href="#"><i class="fa fa-pinterest"></i></a> 
+                            <a href="#"><i class="fa fa-linkedin"></i></a> 
+                        </div>
+                    </div>
+                </div>					
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-item">
+                        <div class="footer-title">
+                            İletişim Bilgileri
+                        </div>
+                        <ul class="list-info">
+                            <li>
+                                <div class="info-icon">
+                                    <span class="fa fa-map-marker"></span>
+                                </div>
+                                <div class="info-text">Hürriyet Mahallesi Eğitim Sokak Adalet İş Merkezi No:27 Kat:4 34403 Kağıthane/İSTANBUL</div> </li>
+                            <li>
+                                <div class="info-icon">
+                                    <span class="fa fa-phone"></span>
+                                </div>
+                                <div class="info-text">0533 785 22 36</div>
+                            </li>
+                            <li>
+                                <div class="info-icon">
+                                    <span class="fa fa-envelope"></span>
+                                </div>
+                                <div class="info-text">osmanogluhukuk@gmail.com</div>
+                            </li>
+                            <li>
+                                <div class="info-icon">
+                                    <span class="fa fa-clock-o"></span>
+                                </div>
+                                <div class="info-text">Pazartesi - Cuma 09:00 - 17:00</div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-item">
+                        <div class="footer-title">
+                            Çalışma Alanlarımız
+                        </div>
+                        
+                        <ul class="list">
+                            {% for practice_area in practice_areas %}
+                            <li><a href="{% url 'single_practice_area' practice_area.slug %}" title="{{ practice_area.title }}">{{ practice_area }}</a></li>
+
+                            {% endfor %}
+                        </ul>
+                            
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="footer-item">
+                        <div class="footer-title">
+                            Faydalı Linkler
+                        </div>
+                        
+                        <ul class="list">
+                            <li><a href="{% url 'about' %}" title="About Us">Hakkımızda</a></li>
+                            <li><a href="{% url 'attorneys' %}" title="Attorney">Avukatlarımız</a></li>
+                            <li><a href="{% url 'practice_areas' %}" title="Practice Areas">Çalışma Alanlarımız</a></li>
+                            <li><a href="{% url 'contact' %}" title="Contact Us">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="fcopy">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <p class="ftex">Copyright 2019 &copy; <span class="color-primary">Lawe Html Template</span>. Designed by <span class="color-primary">Rometheme.</span></p> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,84 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<!-- LOAD PAGE -->
+
+{% include "base/components/nav.html" %}
+{% include "base/components/banner.html" %}
+
+
+
+<!-- CONTENT -->
+<div class="section">
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-8">
+
+                    <div class="row rs-team-single">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="media-box">
+                                <img src="{{ attorney.cover_image.url }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="overlap-btn">
+                                <a href="#" class="btn btn-primary">ÜCRETSİZ DANIŞMA</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="title">{{ attorney.name }}</div>
+                            <div class="position">{{ attorney.position }}</div>
+                            <p>{{ attorney.profile }}</p>
+                            <p class="mb-0"><span class="text-primary">TELEFON :</span> {{ attorney.phone }}</p>
+                            <p><span class="text-primary">E-MAİL :</span> {{ attorney.email }}</p>
+
+                            <h4 class="text-secondary">İletişime geçin</h4>
+                            <div class="sosmed-icon icon-bg-secondary d-inline-flex">
+                                <a href="https://www.facebook.com/{{ attorney.facebook }}/"><i class="fa fa-facebook"></i></a> 
+                                <a href="https://www.twitter.com/{{ attorney.twitter }}/"><i class="fa fa-twitter"></i></a> 
+                                <a href="https://www.instagram.com/{{ attorney.instagram }}/"><i class="fa fa-instagram"></i></a> 
+                                <a href="https://www.linkedin.com/{{ attorney.linkedin }}/"><i class="fa fa-linkedin"></i></a> 
+                            </div>
+                        </div>
+                    </div>
+
+  
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="widget categories">
+                        <ul class="category-nav">
+                            <li><a href="#" title="Family Law">Family Law</a></li>
+                            <li><a href="#" title="Financial Law">Financial Law</a></li>
+                            <li><a href="#" title="Sexual Offences">Sexual Offences</a></li>
+                            <li><a href="#" title="Drug Offences">Drug Offences</a></li>
+                            <li><a href="#" title="Fire Accident">Fire Accident</a></li>
+                            <li><a href="#" title="Shoplifthing">Shoplifthing</a></li>
+                        </ul>
+                    </div>
+
+                   
+                </div>
+                <!-- End Sidebar -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="section bg-primary">
+    <div class="content-wrap py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="text-center text-white">
+                        <h3>Ücretsiz Danışma Hattı : (0533) 785 22 36</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

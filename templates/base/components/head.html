@@ -1,0 +1,50 @@
+{% load static %} 
+{% load compress %}
+ 
+ <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Osmanoğlu Hukuk Danışmanlık Bürosu</title>
+    <meta name="description" content="Lawe is responsive multi-purpose HTML5 template compatible with Bootstrap 4. Take your Startup business website to the next level. It is designed for lawyer, Attorney, businesses or any type of person or business who wants to showcase their work, services and professional way.">
+    <meta name="keywords" content="advocate, attorney, business, consult, consultant, consulting, corporate, government, justice, law, lawyer, lawyers, legal, political">
+    <meta name="author" content="rometheme.net"> 
+	
+	<!-- ==============================================
+	Favicons
+	=============================================== 
+	-->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+	<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
+    
+	
+	<!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/owl.carousel.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/owl.theme.default.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/magnific-popup.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/vendor/animate.min.css' %}">
+	
+	<!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css.map' %}" />
+	
+    <script src="{% static 'js/vendor/modernizr.min.js' %}"></script>
+
+	{% compress css %}
+	<link type="text/x-scss" href="{% static 'sass/style.scss' %}" rel="stylesheet" media="screen">
+	<link type="text/x-scss" href="{% static 'sass/responsive.scss' %}" rel="stylesheet" media="screen">
+    <link type="text/x-scss" href="{% static 'sass/style.scss' %}" rel="stylesheet" media="screen">
+    <link type="text/x-scss" href="{% static 'sass/style.scss' %}" rel="stylesheet" media="screen">
+
+
+
+{% endcompress %}

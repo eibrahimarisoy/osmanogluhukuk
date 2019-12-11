@@ -1,0 +1,280 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+
+
+
+
+{% include "base/components/nav.html" %}
+
+<!-- BANNER -->
+<div id="oc-fullslider" class="banner">
+    <div class="owl-carousel owl-theme full-screen">
+        <div class="item">
+            <img src="/static/images/carousel.jpeg" alt="Slider">
+            <div class="overlay-bg"></div>
+            <div class="container d-flex align-items-center">
+                <div class="wrap-caption">
+                    <h4 class="caption-heading">Osmanoğlu Hukuk'a<br>Hoşgeldiniz</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/static/images/carousel1.jpg" alt="Slider">
+            <div class="overlay-bg"></div>
+            <div class="container d-flex align-items-center">
+                <div class="wrap-caption">
+                    <h4 class="caption-heading">Osmanoğlu Hukuk'a<br>Hoşgeldiniz</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="custom-nav owl-nav"></div>
+</div>
+
+<!-- CTA -->
+<div class="section">
+    <div class="content-wrap py-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="cta-overlap clearfix">
+                        <div class="body-text mb-3">
+                            <h3 class="my-1 text-white">Yanınızda olmasını isteyeceğiniz avukatlar</h3>
+                            <p class="uk18 mb-0 text-primary">Her dava bizim için çok önemlidir ve biz her zaman
+                                ciddiyetle ilgileniriz.</p>
+                        </div>
+                        <div class="body-action">
+                            <a href="{% url 'contact' %}" class="btn btn-primary">ÜCRETSİZ DANIŞMA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OUR PROMISE? -->
+<div class="section">
+    <div class="content-wrap pb-0">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <img src="/static/images/promise.jpg" alt="" class="img-fluid img-border">
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <h2 class="section-heading mt-3">
+                        Our Promise?
+                    </h2>
+                    <p class="subheading mb-4">"we always take care of clients seriously"</p>
+
+                    <p>Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent. Sed ut
+                        perspiciatis unde omnis iste natus error sitdolor sit amet, consectetuer adipiscing elit, sed
+                        diam nonummy nibh euismod. Praesent interdum est gravida vehicula est node maecenas loareet
+                        morbi a dosis luctus novum est praesent. Magna est consectetur interdum modest dictum.</p>
+                    <blockquote class="quote">
+                        <p class="uk18">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                            officia deserunt mollit anim id est laborum.</p>
+                        <footer class="blockquote-footer">Carol Mongol <cite title="Source Title">Rometheme</cite>
+                        </footer>
+                    </blockquote>
+                    <div class="spacer-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WHY CHOOSE -->
+<div class="section">
+    <div class="content-wrap">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-12 col-md-12">
+                    <h2 class="section-heading text-center mb-4">
+                        Uzmanlık Alanlarımız
+                    </h2>
+                    <p class="subheading text-center mb-5">Every case is very important to us and we always take care of
+                        them seriously.</p>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <!-- Item 1 -->
+                {% for practice_area in practice_areas %}
+
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div class="box-icon-1 text-center">
+                        <div class="icon">
+                            <i class="fa fa-fire"></i>
+                        </div>
+                        <div class="body-content">
+                            <h3>{{ practice_area.title }}</h3>
+                            <p>{{ practice_area.summary }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MEET OUR ATTORNEY -->
+<div class="section">
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-12">
+                    <h2 class="section-heading text-center mb-4">
+                        Avukatlarımızla Tanışın
+                    </h2>
+                    <p class="subheading text-center mb-5">Every case is very important to us and we always take care of
+                        them seriously.</p>
+                </div>
+
+            </div>
+            <div class="row">
+                <!-- Item 1 -->
+
+
+
+
+                {% for attorney in attorneys %}
+                <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
+                    <div class="rs-team-1">
+                        <div class="media-box">
+                            <a href="{% url 'single_attorney' attorney.slug %}"><img
+                                    src="{{ attorney.cover_image.url }}" alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="body">
+                            <div class="title"><a href="{{ attorney.cover_image.url }}">{{ attorney.name }}</a></div>
+                            <div class="position">{{ attorney.position }}</div>
+                            <div class="sosmed-icon icon-bg-secondary d-inline-flex">
+                                <a href="https://www.facebook.com/{{ attorney.facebook }}/"><i
+                                        class="fa fa-facebook"></i></a>
+                                <a href="https://www.twitter.com/{{ attorney.twitter }}/"><i
+                                        class="fa fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/{{ attorney.instagram }}/"><i
+                                        class="fa fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/{{ attorney.linkedin }}/"><i
+                                        class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section bgi-cover-center" data-background="/static/images/dummy-img-1920x900-2.jpg">
+    <div class="content-wrap pb-0">
+        <div class="container">
+            <div class="row align-items-end">
+
+                <div class="col-12 col-md-7">
+                    <h2 class="section-heading">
+                        Ücretsiz Danışma
+                    </h2>
+                    <p class="subheading mb-5">Lütfen soru sormaktan çekinmeyin.</p>
+
+                    <form action="/message_submit/" method="post" data-toggle="validator" novalidate="true">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="p_name" placeholder="İsminiz"
+                                        required="">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="p_email" placeholder="Email adresiniz"
+                                        required="">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="p_phone"
+                                        placeholder="Telefon numaranız">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="p_subject" placeholder="Konu">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="p_content" class="form-control" rows="6" placeholder="Mesajınız"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <div id="success"></div>
+                            <button class="btn btn-primary">Şimdi Gönder</button>
+                        </div>
+                    </form>
+                    <div class="spacer-content"></div>
+
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <img src="/static/images/message.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="section bg-primary">
+    <div class="content-wrap py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="text-center text-white">
+                        <h3>Ücretsiz Danışma Hattı : 0533 785 22 36</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
