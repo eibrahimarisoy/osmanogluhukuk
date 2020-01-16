@@ -13,15 +13,15 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <h2 class="section-heading">
-                        Osmanoğlu Hukuk Bürosuna Hoşgeldiniz
+                        Osmanoğlu Hukuk ve Danışmanlık Bürosu
                     </h2>
-                    <p class="subheading mb-4">"we always take care of clients seriously"</p>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                        provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-                        dolorum fuga.</p>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        est laborum.</p>
+                        <p>
+                        Büromuz alanında uzman kadrosu ile hem danışmanlık hem de dava takibi hizmetleri sunmaktadır.
+
+                    </p>
+                    <p>
+                        Osmanoğlu Hukuk ve Danışmanlık Bürosu en verimli şekilde çözüme ulaşmak amacıyla çalışma alanlarına göre uzmanlaşmış departmanlara ayrılarak organize olmuştur.
+                    </p>
                     
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">
@@ -35,7 +35,7 @@
 
 <!-- FAQS -->
 <div class="section">
-    <div class="content-wrap pb-0">
+    <div class="content-wrap p-0">
         <div class="container">
 
             <div class="row">
@@ -44,11 +44,10 @@
                     <h2 class="section-heading">
                         Sıkça Sorulan Sorular
                     </h2>
-                    <p class="subheading mb-4">"we always take care of clients seriously"</p>
                 </div>
             </div>
 
-            <div class="row align-items-end mt-5">
+            <div class="row align-items-end mt-1">
 
                 <div class="col-sm-12 col-md-12 col-lg-5">
                     <img src="/static/images/faq.jpg" alt="" class="img-fluid img-border">
@@ -57,98 +56,24 @@
 
                     <div class="accordion rs-accordion" id="accordionExample">
                         <!-- Item 1 -->
+                        {% for faq in faqs %}
                         <div class="card">
-                            <div class="card-header" id="headingOne">
+                            <div class="card-header" id="heading{{ faq.pk }}">
                                 <h3 class="title">
                                     <button class="btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        How do children learn?
+                                        data-target="#collapse{{ faq.pk }}" aria-expanded="true" aria-controls="collapse{{ faq.pk }}">
+                                        {{ faq.question }}
                                     </button>
                                 </h3>
                             </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            <div id="collapse{{ faq.pk }}" class="collapse {% if forloop.first %} show {% endif %}" aria-labelledby="heading{{ faq.pk }}"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Create and publilsh dynamic websites for desktop, tablet, and mobile devices that
-                                    meet the latest web standards- without writing code. Design freely using familiar
-                                    tools and hundreds of web fonts. easily add interactivity, including slide shows,
-                                    forms, and more.
+                                    {{ faq.answer }}
                                 </div>
                             </div>
                         </div>
-                        <!-- Item 2 -->
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h3 class="title">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        When can I enroll?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordionExample">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
-                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                                    accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h3 class="title">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        How successful are children when they graduate from Kids?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>Unzip the file, locate Html file and double click the file and you will directly
-                                        to adobe Html. Next step you can modifications our template, you can customize
-                                        color, text, font, content, logo and image with your need using familiar tools
-                                        on adobe Html without writing any code.</p>
-                                    <p>You can't re-distribute the Item as stock, in a tool or template, or with source
-                                        files. You can't re-distribute or make available the Item as-is or with
-                                        superficial modifications. These things are not allowed even if the
-                                        re-distribution is for Free.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Item 4 -->
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <h3 class="title">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        What security measures are in place at Kids?
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <p>Unzip the file, locate Html file and double click the file and you will directly
-                                        to adobe Html. Next step you can modifications our template, you can customize
-                                        color, text, font, content, logo and image with your need using familiar tools
-                                        on adobe Html without writing any code.</p>
-                                    <p>You can't re-distribute the Item as stock, in a tool or template, or with source
-                                        files. You can't re-distribute or make available the Item as-is or with
-                                        superficial modifications. These things are not allowed even if the
-                                        re-distribution is for Free.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <!-- end accordion -->
 

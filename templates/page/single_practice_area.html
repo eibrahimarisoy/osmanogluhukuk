@@ -26,7 +26,7 @@
 							</h2>
 							<p>{{ practice_area.content }}</p>
 
-							<a href="{% url 'contact' %}" class="btn btn-secondary">ÜCRETSİZ DANIŞIN</a>
+							<a href="{% url 'contact' %}" class="btn btn-secondary">BİZİMLE İLETİŞİME GEÇİN</a>
 
 						</div>
 					</div>
@@ -36,16 +36,15 @@
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<div class="widget categories">
 						<ul class="category-nav">
-							<li><a href="#" title="Family Law">Family Law</a></li>
-							<li><a href="#" title="Financial Law">Financial Law</a></li>
-							<li><a href="#" title="Sexual Offences">Sexual Offences</a></li>
-							<li><a href="#" title="Drug Offences">Drug Offences</a></li>
-							<li><a href="#" title="Fire Accident">Fire Accident</a></li>
-							<li><a href="#" title="Shoplifthing">Shoplifthing</a></li>
+							{% for practice in practice_areas %}
+							<li><a href="{% url 'single_practice_area' practice.slug %}" >{{ practice.title }}</a></li>
+
+							{% endfor %}
+		
 						</ul>
 					</div>
 
-					<div class="widget">
+					<!-- <div class="widget">
 						<div class="rs-box-widget bg-secondary">
 							<div class="icon">
 								<i class="fa fa-phone"></i>
@@ -70,7 +69,7 @@
 								<a href="#" class="btn btn-primary">DOWNLOAD</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 				</div>
 				<!-- End Sidebar -->

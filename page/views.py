@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from attorney.models import Attorney
-from practice_area.models import PracticeArea
+from practice_area.models import PracticeArea, Faq
+from page.models import Carousel
+
 
 # Create your views here.
 
@@ -11,16 +13,30 @@ def index(request):
 
     practice_areas = PracticeArea.objects.filter(
         status="published"
+    )[::-1]
+
+    carousels = Carousel.objects.filter(
+        status="published"
+    )
+
+    faqs = Faq.objects.filter(
+        status="published"
     )
     context = dict()
     context['banner_page_name'] = "Ana Sayfa"
     context['attorneys'] = attorneys
     context['practice_areas'] = practice_areas
+    context['carousels'] = carousels
+    context['faqs'] = faqs
     return render(request, "page/index.html", context)
 
 def about(request):
+    faqs = Faq.objects.filter(
+        status="published"
+    )
     context = dict()
     context['banner_page_name'] = "Hakkımızda"
+    context['faqs'] = faqs
     return render(request, "page/about.html", context)
 
 def contact(request):    
@@ -56,9 +72,13 @@ def practice_areas(request):
     return render(request, "page/practice_areas.html", context)
 
 def single_practice_area(request, practice_area_name):
-    practice_area = PracticeArea.objects.get(slug=practice_area_name)    
+    practice_area = PracticeArea.objects.get(slug=practice_area_name)
+    practice_areas = PracticeArea.objects.filter(
+        status="published"
+    )[::-1]    
     context = dict()
     context['banner_page_name'] = "Çalışma Alanlarımız"
     context['practice_area_name'] = practice_area.title
     context['practice_area'] = practice_area
+    context['practtics_areas'] = practice_areas
     return render(request, "page/single_practice_area.html", context)

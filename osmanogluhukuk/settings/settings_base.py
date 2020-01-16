@@ -81,6 +81,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'osmanogluhukuk.footer_context.footer_data',
+                'osmanogluhukuk.firm_context.firm_data',
             ],
         },
     },

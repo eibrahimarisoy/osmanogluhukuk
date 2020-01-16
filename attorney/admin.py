@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Attorney
+from .models import Attorney, Firm
 # Register your models here.
 class AttorneyAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
@@ -15,6 +15,23 @@ class AttorneyAdmin(admin.ModelAdmin):
         'status',
     )
 
+class FirmAdmin(admin.ModelAdmin):
+    list_display = (
+        'pk',
+        'name',
+        'phone',
+        'email',
+        'address',
+        'working_hour',
+    )
+
+    list_editable = (
+        'name',
+        'phone',
+        'email',
+        'address',
+        'working_hour',
+    )
 
 
 
@@ -25,3 +42,4 @@ class AttorneyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Attorney, AttorneyAdmin)
+admin.site.register(Firm, FirmAdmin)

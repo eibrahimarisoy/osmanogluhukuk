@@ -37,3 +37,20 @@ class PracticeArea(models.Model):
 
     class Meta:
         ordering = ["-created_date"]
+
+
+class Faq(models.Model):
+    question = models.CharField(max_length=250, verbose_name="Soru")
+    answer = models.CharField(max_length=550, verbose_name="Cevap")
+    
+    status = models.CharField(
+        default=DEFAULT_STATUS, 
+        choices=STATUS,
+        max_length=10,
+    )
+
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.question

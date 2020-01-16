@@ -8,14 +8,15 @@
                 <div class="col-sm-8 col-md-6">
                     <div class="info">
                         <div class="info-item">
-                            <i class="fa fa-phone"></i><a href="tel:+905337852236">05337852236</a> 
+                            <i class="fa fa-phone"></i><a href="tel:+90{{ firm.phone }}">0{{ firm.phone }}</a> 
                         </div>
                         <div class="info-item">
-                            <i class="fa fa-envelope-o"></i> <a href="mailto:osmanogluhukuk@gmail.com"
-                                title="">osmanogluhukuk@gmail.com</a>
+                            <i class="fa fa-envelope-o"></i> <a href="mailto:{{ firm.email }}"
+                                title="">{{ firm.email }}</a>
                         </div>
                     </div>
                 </div>
+                <!--                
                 <div class="col-sm-4 col-md-6">
                     <div class="sosmed-icon pull-right d-inline-flex">
                         <a href="#"><i class="fa fa-facebook"></i></a>
@@ -24,6 +25,8 @@
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                     </div>
                 </div>
+                -->
+
             </div>
         </div>
     </div>
@@ -33,7 +36,7 @@
         <div class="container">
             <nav id="navbar-example" class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="{% url 'index' %}">
-                    <img src="/static/images/logo_2.png" alt="">
+                    <img src="/static/images/logo_22.png" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +51,7 @@
                             <a class="nav-link" href="{% url 'about' %}">HAKKIMIZDA</a>
                         </li>
                         <li class="nav-item {% if banner_page_name == 'Avukatlarımız' %} active {% endif %}">
-                            <a class="nav-link " href="{% url 'attorneys' %}">AVUKATLARIMIZ</a>
+                            <a class="nav-link " href="{% url 'attorneys' %}">EKİBİMİZ</a>
                             <!--
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="attorneys.html">ATTORNEYS LIST</a>
