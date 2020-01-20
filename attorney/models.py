@@ -20,10 +20,12 @@ class Attorney(models.Model):
         db_index=True,
     )
     position = models.CharField(max_length=50, verbose_name="pozisyon")
-    cover_image = models.FileField(blank=True, null=True,verbose_name="fotoğraf")
+    cover_image = models.FileField(blank=True, null=True,verbose_name="fotoğraf 600*700px")
     profile = models.TextField(verbose_name="özgeçmiş")
     email = models.EmailField(max_length=254, verbose_name="email")
     phone = models.IntegerField(verbose_name="telefon")
+
+    number = models.IntegerField(unique=True, blank=True, null=True)
 
     facebook = models.CharField(max_length=100, verbose_name="facebook", blank=True, null=True)
     twitter = models.CharField(max_length=100, verbose_name="twitter", blank=True, null=True)
@@ -43,7 +45,7 @@ class Attorney(models.Model):
         return self.name
 
     class Meta:
-        ordering=['-created_date']    
+        ordering=['-number']    
 
 class Firm(models.Model):
     name = models.CharField(max_length=250, verbose_name="Firma Adı")
@@ -51,6 +53,7 @@ class Firm(models.Model):
     phone = models.IntegerField(verbose_name="Telefon")
     email = models.EmailField(max_length=254, verbose_name="Email")
     working_hour = models.CharField(max_length=150, verbose_name="Çalışma Saatleri")
+    cover_image = models.ImageField(upload_to="logo", verbose_name="200*75 px", blank=True, null=True)
 
     created_date = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

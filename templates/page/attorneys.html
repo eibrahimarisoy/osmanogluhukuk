@@ -20,11 +20,13 @@
                 <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
                     <div class="rs-team-1">
                         <div class="media-box">
-                            <a href="{% url 'single_attorney' attorney.slug %}"><img src="{{ attorney.cover_image.url }}" alt="" class="img-fluid"></a>
+                            <img src="{{ attorney.cover_image.url }}" alt="" class="img-fluid">
                         </div>
                         <div class="body">
-                            <div class="title"><a href="{% url 'single_attorney' attorney.slug %}">{{ attorney.name }}</a></div>
+                            <div class="title">{{ attorney.name }}</div>
                             <div class="position">{{ attorney.position }}</div>
+                            <a href="tel:+90{{ attorney.phone }}"><p class="mb-0">0{{ attorney.phone }}</p></a>
+                            <a href="mailto:{{ attorney.email }}"><p> {{ attorney.email }}</p></a>
                             <!-- <div class="sosmed-icon icon-bg-secondary d-inline-flex">
                                 <a href="https://www.facebook.com/{{ attorney.facebook }}/"><i class="fa fa-facebook"></i></a> 
                                 <a href="https://www.twitter.com/{{ attorney.twitter }}/"><i class="fa fa-twitter"></i></a> 

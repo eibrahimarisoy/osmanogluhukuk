@@ -82,3 +82,7 @@ def single_practice_area(request, practice_area_name):
     context['practice_area'] = practice_area
     context['practtics_areas'] = practice_areas
     return render(request, "page/single_practice_area.html", context)
+
+def error_404_view(request, exception):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request,'page/page-404.html', data)

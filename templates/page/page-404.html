@@ -1,0 +1,29 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<!-- LOAD PAGE -->
+
+{% include "base/components/nav.html" %}
+
+<!-- 404 -->
+<div class="section">
+    <div class="content-wrap">
+        <div class="container">				
+
+            <div class="row">
+                
+                <div class="col-12 col-md-12">
+                    <div class="text-center page404">
+                        <h1 class="title">404</h1>
+                        <h3 class="text-secondary">İstediğiniz sayfaya şuan ulaşılamıyor.</h3>
+<!--                         <p class="mb-5">The page you are looking for was moved, removed, renamed or might never existed.</p>
+ -->                        <a href="{% url 'index' %}" class="btn btn-primary">Anasayfaya Dön</a>
+                    </div>
+                </div>	
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -19,10 +19,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from page.views import index
 from message.views import message_submit
+from django.conf.urls import handler404
+from django.views.static import serve
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
     path('page/', include('page.urls'), ),
     path('message_submit/', message_submit, name='message_submit'),
+    path('media/(<path>)', serve,{'document_root': settings.MEDIA_ROOT}),
+    path('static/(<path>)', serve,{'document_root': settings.STATIC_ROOT}),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+handler404 = 'page.views.error_404_view'

@@ -16,9 +16,8 @@
 					<div class="col-sm-12 col-md-12 col-lg-8">
 						
 						<h2 class="section-heading">
-							Ücretsiz Danışma
+							Bizimle İletişime Geçin
 						</h2>
-						<p class="subheading mb-4">"we always take care of clients seriously"</p>
 						<form action="/message_submit/" method="post" data-toggle="validator" novalidate="true">
 							{% csrf_token %}
 							<div class="row">
@@ -62,13 +61,12 @@
 						<h2 class="section-heading">
 							İletişim Bilgileri
 						</h2>
-						<p class="subheading mb-4">"we always take care of clients seriously"</p>
 						<!-- Item 1 -->
 						<div class="row align-items-center">
 							<div class="col-2"><i class="fa fa-map-marker fa-3x text-primary"></i></div>
 							<div class="col-10">
 								<h4 class="text-primary mb-0">Adres :</h4>
-								<p>Hürriyet Mahallesi Eğitim Sokak Adalet İş Merkezi No:27 Kat:4 34403 Kağıthane/İSTANBUL</p>
+								<p>{{ firm.address }}</p>
 							</div>
 						</div>
 						<!-- Item 2 -->
@@ -76,7 +74,7 @@
 							<div class="col-2"><i class="fa fa-envelope fa-3x text-primary"></i></div>
 							<div class="col-10">
 								<h4 class="text-primary mb-0">Email :</h4>
-								<p>osmanogluhukuk@gmail.com</p>
+								<p>{{ firm.email }}</p>
 							</div>
 						</div>
 						<!-- Item 3 -->
@@ -84,7 +82,7 @@
 							<div class="col-2"><i class="fa fa-phone fa-3x text-primary"></i></div>
 							<div class="col-10">
 								<h4 class="text-primary mb-0">Telefon :</h4>
-								<p>0533 785 22 36</p>
+								<p>0{{ firm.phone }}</p>
 							</div>
 						</div>
 						<!-- Item 4 -->
@@ -92,7 +90,7 @@
 							<div class="col-2"><i class="fa fa-clock-o fa-3x text-primary"></i></div>
 							<div class="col-10">
 								<h4 class="text-primary mb-0">Çalışma Saatleri :</h4>
-								<p>Haftaiçi : 09.00 - 16.00 <br>Haftasonu : Kapalı</p>
+								<p>{{ firm.working_hour }}</p>
 							</div>
 						</div>
 					</div>
@@ -110,36 +108,5 @@
 		<div id="maps" class="maps" data-lat="41.072018" data-lng="28.982690" data-marker="/static/images/cd-icon-location.png">
 		</div>
 	</div>	
-
-	<!-- CTA -->
-	<div class="section bg-primary">
-		<div class="content-wrap py-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-md-12">
-						<div class="text-center text-white">
-			              	<h3>Ücretsiz Danışma Hattı : (0533) 785 22 36</h3>
-			            </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock content %}

@@ -5,6 +5,7 @@ class AttorneyAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
     list_display = (
         'pk',
+        'number',
         'name',
         'slug',
         'position',
@@ -12,12 +13,15 @@ class AttorneyAdmin(admin.ModelAdmin):
     )
     list_filter = ('status',)
     list_editable = (
+        'number',
         'status',
+
     )
 
 class FirmAdmin(admin.ModelAdmin):
     list_display = (
         'pk',
+        'cover_image',
         'name',
         'phone',
         'email',

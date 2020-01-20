@@ -35,7 +35,7 @@
 
 <!-- FAQS -->
 <div class="section">
-    <div class="content-wrap p-0">
+    <div class="content-wrap py-0">
         <div class="container">
 
             <div class="row">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="row align-items-end mt-1">
+            <div class="row align-items-end mt-5">
 
                 <div class="col-sm-12 col-md-12 col-lg-5">
                     <img src="/static/images/faq.jpg" alt="" class="img-fluid img-border">
@@ -55,32 +55,35 @@
                 <div class="col-sm-12 col-md-12 col-lg-7">
 
                     <div class="accordion rs-accordion" id="accordionExample">
-                        <!-- Item 1 -->
                         {% for faq in faqs %}
                         <div class="card">
                             <div class="card-header" id="heading{{ faq.pk }}">
                                 <h3 class="title">
                                     <button class="btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapse{{ faq.pk }}" aria-expanded="true" aria-controls="collapse{{ faq.pk }}">
+                                        data-target="#collapse{{ faq.pk }}" aria-expanded="true"
+                                        aria-controls="collapse{{ faq.pk }}">
                                         {{ faq.question }}
                                     </button>
                                 </h3>
                             </div>
-                            <div id="collapse{{ faq.pk }}" class="collapse {% if forloop.first %} show {% endif %}" aria-labelledby="heading{{ faq.pk }}"
-                                data-parent="#accordionExample">
+                            <div id="collapse{{ faq.pk }}" class="collapse {% if forloop.first %} show {% endif %}"
+                                aria-labelledby="heading{{ faq.pk }}" data-parent="#accordionExample">
                                 <div class="card-body">
                                     {{ faq.answer }}
                                 </div>
                             </div>
                         </div>
                         {% endfor %}
+
+
                     </div>
                     <!-- end accordion -->
 
-                    <p class="uk21 mt-5 text-black"><a href="{% url 'contact' %}">Aradığınız cevabı bulamadınız mı? Bizimle iletişime geçin!</a>
+                    <p class="uk21 mt-1 py-2 text-black"><a href="{% url 'contact' %}">Aradığınız cevabı bulamadınız mı?
+                            Bizimle iletişime geçin!</a>
                     </p>
 
-                    <div class="spacer-content"></div>
+                   
 
                 </div>
 
