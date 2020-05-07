@@ -26,7 +26,8 @@ from django.views.static import serve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
-    path('page/', include('page.urls'), ),
+    path('', include('page.urls'),),
+    path('blogs/', include('blog.urls')),
     path('message_submit/', message_submit, name='message_submit'),
     path('media/(<path>)', serve,{'document_root': settings.MEDIA_ROOT}),
     path('static/(<path>)', serve,{'document_root': settings.STATIC_ROOT}),

@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0fd+xe8jq#fpo0k$m$%wu&l18zr3#)sjwj5g1vzss6eguvo^ba'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
  
@@ -38,14 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+
     # Third Party Apps:
     'compressor',
+    'ckeditor',
     
     # My Apps:
     'page',
     'attorney',
     'practice_area',
     'message',
+    'blog',
 
 
 
@@ -111,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr-tr'
 
 TIME_ZONE = 'UTC'
 
@@ -129,10 +132,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,"../static")
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "../static"),
+os.path.join(BASE_DIR, '../static'),
 ]
 
-STATICFILES_FINDERS=[
+STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 ]
@@ -141,7 +144,41 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
     
 )
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
+
+# LOGGING = {
+#     'version': 1,
+#     # Version of logging
+#     'disable_existing_loggers': False,
+#     #disable logging 
+#     # Handlers #############################################################
+#     'handlers': {
+#         'file': {
+#             'level': 'CRITICAL',
+#             'class': 'logging.FileHandler',
+#             'filename': 'osmanogluhukuk-debug.log',
+#         },
+# ########################################################################
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     # Loggers ####################################################################
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file', 'console'],
+#             'level': 'CRITICAL',
+#             'propagate': True,
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG')
+#         },
+#     },
+# }
+
+
+
+
+CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'js/vendor/jquery.min.js')

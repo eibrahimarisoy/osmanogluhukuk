@@ -36,7 +36,7 @@
         <div class="container">
             <nav id="navbar-example" class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="{% url 'index' %}">
-                    <img src="{{ firm.cover_image.url }}" alt="">
+                    <img src="{{ firm.navbar_image.url }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +58,10 @@
                                 <a class="dropdown-item" href="attorneys-single.html">SINGLE ATTORNEYS</a>
                             </div>
                             -->
+
+                        </li>
+                        <li class="nav-item {% if banner_page_name == 'Blog Yazılarımız' %} active {% endif %} ">
+                            <a class="nav-link " href="{% url 'blogs' %}">BLOG</a>
 
                         </li>
                         <li class="nav-item {% if banner_page_name == 'Çalışma Alanlarımız' %} active {% endif %} ">

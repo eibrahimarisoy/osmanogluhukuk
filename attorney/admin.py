@@ -21,7 +21,7 @@ class AttorneyAdmin(admin.ModelAdmin):
 class FirmAdmin(admin.ModelAdmin):
     list_display = (
         'pk',
-        'cover_image',
+        # 'banner_image',
         'name',
         'phone',
         'email',

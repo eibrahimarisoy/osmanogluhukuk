@@ -20,11 +20,11 @@
 					</div>
 
 					<div class="row mt-5">
-						<div class="col-sm-12 col-md-12">
+						<div class="col-sm-12 col-md-12" style="text-align:justify">
 							<h2 class="section-heading">
 								{{ practice_area.title }}
 							</h2>
-							<p>{{ practice_area.content }}</p>
+							<p>{{ practice_area.content | safe }}</p>
 
 							<a href="{% url 'contact' %}" class="btn btn-secondary">BİZİMLE İLETİŞİME GEÇİN</a>
 
@@ -77,43 +77,4 @@
 		</div>
 	</div>
 </div>
-
-<!-- CTA -->
-<div class="section bg-primary">
-	<div class="content-wrap py-3">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-md-12">
-					<div class="text-center text-white">
-						<h3>Ücretsiz Danışma Hattı : 0533 785 22 36</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% endblock content %}

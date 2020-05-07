@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 DEFAULT_STATUS = "draft"
 # Create your models here.
@@ -19,7 +19,7 @@ class PracticeArea(models.Model):
         default="",
         db_index=True,
     )
-    content = models.TextField(verbose_name="İçerik")
+    content = RichTextField(verbose_name="İçerik")
     summary = models.CharField(max_length=250, default="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.")
     cover_image = models.FileField(blank=True, null=True, verbose_name="Fotoğraf")
 

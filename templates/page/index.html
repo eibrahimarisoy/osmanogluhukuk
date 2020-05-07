@@ -31,7 +31,7 @@
 </div>
 
 <!-- CTA -->
-<div class="section">
+<!-- <div class="section">
     <div class="content-wrap py-0">
         <div class="container">
             <div class="row">
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- OUR PROMISE? 
 <div class="section">
@@ -87,52 +87,40 @@
 <div class="section">
     <div class="content-wrap">
         <div class="container">
-
             <div class="row">
-
                 <div class="col-sm-12 col-md-12">
                     <h2 class="section-heading text-center mb-4">
                         Uzmanlık Alanlarımız
                     </h2>
-                    <p class="subheading text-center mb-5">Osmanoğlu Hukuk ve Danışmanlık Bürosu müvekkillerine hukukun
-                        her alanında hizmet verir ve uzun soluklu ilişkiler kurar.</p>
                 </div>
-
             </div>
-
             <div class="row justify-content-center">
                 <!-- Item 1 -->
                 {% for practice_area in practice_areas %}
-
-
                 <div class="col-12 col-sm-6 col-md-4 mb-4">
                     <a href="{% url 'single_practice_area' practice_area.slug %}">
-                    <div class="box-icon-1 text-center">
-                        <div class="icon">
-                            <i class="fa fa-fire"></i>
+                        <div class="box-icon-1 text-center">
+                            <div class="icon">
+                                <i class="fa fa-fire"></i>
+                            </div>
+                            <div class="body-content">
+                                <h3>{{ practice_area.title }}</h3>
+                                <p>{{ practice_area.summary }}</p>
+                            </div>
                         </div>
-                        <div class="body-content">
-                            <h3>{{ practice_area.title }}</h3>
-                            <p>{{ practice_area.summary }}</p>
-                        </div>
-                    </div>
                     </a>
                 </div>
-
-
                 {% endfor %}
-
             </div>
         </div>
     </div>
 </div>
 
 <!-- MEET OUR ATTORNEY -->
-<div class="section ">
+<!-- <div class="section ">
     <div class="content-wrap py-0">
         <div class="container">
             <div class="row">
-
                 <div class="col-sm-12 col-md-12">
                     <h2 class="section-heading text-center mb-4">
                         Avukatlarımızla Tanışın
@@ -141,20 +129,18 @@
 
             </div>
             <div class="row">
-                <!-- Item 1 -->
 
                 {% for attorney in attorneys %}
                 <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
                     <div class="rs-team-1">
                         <div class="media-box">
-                            <a href="{% url 'single_attorney' attorney.slug %}"><img
-                                    src="{{ attorney.cover_image.url }}" alt="" class="img-fluid"></a>
+                            <img src="{{ attorney.cover_image.url }}" alt="" class="img-fluid">
                         </div>
 
                         <div class="body">
-                            <div class="title"><a href="{{ attorney.cover_image.url }}">{{ attorney.name }}</a></div>
+                            <div class="title">{{ attorney.name }}</div>
                             <div class="position">{{ attorney.position }}</div>
-                            <!-- Avukatlara ait sosyal medya hesapları
+                            Avukatlara ait sosyal medya hesapları
                             <div class="sosmed-icon icon-bg-secondary d-inline-flex">
                                 <a href="https://www.facebook.com/{{ attorney.facebook }}/"><i
                                         class="fa fa-facebook"></i></a>
@@ -166,7 +152,7 @@
                                         class="fa fa-linkedin"></i></a>
                             </div>
                             -->
-                        </div>
+                        <!-- </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -174,10 +160,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- FAQS -->
-<div class="section">
+<div class="section mt-0 mb-3">
     <div class="content-wrap py-0">
         <div class="container">
 
@@ -217,26 +203,15 @@
                             </div>
                         </div>
                         {% endfor %}
-
-
                     </div>
                     <!-- end accordion -->
-
-                    <p class="uk21 mt-1 py-2 text-black"><a href="{% url 'contact' %}">Aradığınız cevabı bulamadınız mı?
-                            Bizimle iletişime geçin!</a>
-                    </p>
-
-                   
-
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
 
-<!-- CONTACT -->
+<!-- CONTACT
 <div id="contact" class="section bgi-cover-center" data-background="/static/images/contactbackgorund.png">
     <div class="content-wrap pb-0">
         <div class="container">
@@ -246,8 +221,6 @@
                     <h2 class="section-heading">
                         Bizimle İletişime Geçebilirsiniz
                     </h2>
-                    <p class="subheading mb-5">Lütfen soru sormaktan çekinmeyin.</p>
-
                     <form action="/message_submit/" method="post" data-toggle="validator" novalidate="true">
                         {% csrf_token %}
                         <div class="row">
@@ -292,14 +265,12 @@
 
                 </div>
 
-                <div class="col-12 col-md-5">
-                    <img src="/static/images/message.jpg" alt="" class="img-fluid">
-                </div>
+
 
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 

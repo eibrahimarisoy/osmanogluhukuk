@@ -47,14 +47,16 @@ class Attorney(models.Model):
     class Meta:
         ordering=['-number']    
 
+
 class Firm(models.Model):
     name = models.CharField(max_length=250, verbose_name="Firma Adı")
     address = models.CharField(max_length=250, verbose_name="Adres")
     phone = models.IntegerField(verbose_name="Telefon")
     email = models.EmailField(max_length=254, verbose_name="Email")
     working_hour = models.CharField(max_length=150, verbose_name="Çalışma Saatleri")
-    cover_image = models.ImageField(upload_to="logo", verbose_name="200*75 px", blank=True, null=True)
-
+    navbar_image = models.ImageField(upload_to="logo", verbose_name="200*75 px", blank=True, null=True)
+    footer_image = models.ImageField(upload_to="logo", verbose_name="200*75 px", blank=True, null=True)
+    
     created_date = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

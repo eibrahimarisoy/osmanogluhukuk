@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Message
+from django.contrib import messages
 
 # Create your views here.
 def message_submit(request):
@@ -13,4 +14,5 @@ def message_submit(request):
         message = Message(name=name, email=email, phone=phone, subject=subject, content=content)
         message.save()
 
+        messages.success(request, 'Mesajınız başarıyla alınmıştır. Ekibimiz en kısa sürede size dönüş yapacaktır')
         return redirect("index")

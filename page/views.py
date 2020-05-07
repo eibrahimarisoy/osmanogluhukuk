@@ -54,13 +54,6 @@ def attorneys(request):
 
     return render(request, "page/attorneys.html", context)
 
-def single_attorney(request, attorney_name):    
-    attorney = Attorney.objects.get(slug=attorney_name)
-    context = dict()
-    context['banner_page_name'] = "Avukatlarımız"
-    context['attorney_name'] = attorney.name
-    context['attorney'] = attorney
-    return render(request, "page/single_attorney.html", context)
 
 def practice_areas(request):
     practice_areas = PracticeArea.objects.filter(
@@ -80,9 +73,18 @@ def single_practice_area(request, practice_area_name):
     context['banner_page_name'] = "Çalışma Alanlarımız"
     context['practice_area_name'] = practice_area.title
     context['practice_area'] = practice_area
-    context['practtics_areas'] = practice_areas
     return render(request, "page/single_practice_area.html", context)
+
 
 def error_404_view(request, exception):
     data = {"name": "ThePythonDjango.com"}
-    return render(request,'page/page-404.html', data)
+    return render(request, 'page/page-404.html', data)
+    
+
+# def single_attorney(request, attorney_name):    
+#     attorney = Attorney.objects.get(slug=attorney_name)
+#     context = dict()
+#     context['banner_page_name'] = "Avukatlarımız"
+#     context['attorney_name'] = attorney.name
+#     context['attorney'] = attorney
+#     return render(request, "page/single_attorney.html", context)
