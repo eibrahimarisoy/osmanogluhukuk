@@ -1,0 +1,41 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<!-- LOAD PAGE -->
+
+{% include "base/components/banner.html" %}
+
+<!-- CONTENT -->
+<div class="section">
+    <div class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-8">
+                    <div class="row rs-team-single justify-content-center">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="media-box">
+                                <img src="{{ attorney.cover_image.url }}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="title">{{ attorney.name }}</div>
+                            <div class="position">{{ attorney.position }}</div>
+                            <p>{{ attorney.profile }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="widget categories">
+                        <ul class="category-nav">
+                            <h3 class="text-center">Çalışma Alanlarımız</h3>
+                            {% for practice in practice_areas %}
+                            <li><a href="{% url 'practice_area_details' practice.slug %}">{{ practice.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -2,9 +2,10 @@
 {% load static %}
 {% block content %}
 <!-- LOAD PAGE -->
- 
-{% include "base/components/nav.html" %}
+
 {% include "base/components/banner.html" %}
+
+{% include "base/components/message.html" %}
 
 
 <!-- CONTENT -->
@@ -12,9 +13,7 @@
 	<div class="content-wrap">
 		<div class="container">
 			<div class="row">
-
 				<div class="col-sm-12 col-md-12 col-lg-8">
-
 					<h2 class="section-heading">
 						İletişim Formu </h2>
 					<form action="/message_submit/" method="post" data-toggle="validator" novalidate="true">
@@ -58,7 +57,6 @@
 							<button class="btn btn-secondary">Şimdi Gönder</button>
 						</div>
 					</form>
-
 				</div>
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<h2 class="section-heading">
@@ -93,24 +91,25 @@
 						<div class="col-2"><i class="fa fa-clock-o fa-3x text-primary"></i></div>
 						<div class="col-10">
 							<h4 class="text-primary mb-0">Çalışma Saatleri :</h4>
-							<p>{{ firm.working_hour }}</p>
+							<p>{{ firm.working_hours }}</p>
 						</div>
 					</div>
 				</div>
 				<!-- End Sidebar -->
-
 			</div>
 		</div>
 	</div>
 </div>
 
 <!-- MAPS -->
-<div class="maps-wraper">
-	<!-- <div id="cd-zoom-in"></div>
-	<div id="cd-zoom-out"></div> -->
-	<!-- <div id="maps" class="maps" data-lat="41.072018" data-lng="28.982690"
-		data-marker="{% static 'images/cd-icon-location.png' %}">
-	</div> -->
-
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d572.7910896231177!2d28.97767392918324!3d41.07145020975267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab6e0efd93353%3A0x715b1ec00178eabb!2zR8O8cnNlbCwgS2HEn8SxdGhhbmUgQ2QuIDExNmMsIDM0NDAwIEvDosSfxLF0aGFuZS_EsHN0YW5idWw!5e1!3m2!1str!2str!4v1588856820554!5m2!1str!2str" width="800" height="1200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1503.9438071762818!2d28.977570400624412!3d41.07144919816987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab6e0efd93353%3A0x715b1ec00178eabb!2zR8O8cnNlbCwgS2HEn8SxdGhhbmUgQ2QuIDExNmMsIDM0NDAwIEvDosSfxLF0aGFuZS_EsHN0YW5idWw!5e0!3m2!1str!2str!4v1589544507068!5m2!1str!2str"
+				width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+				tabindex="0"></iframe>
+		</div>
+	</div>
+</div>
 {% endblock content %}

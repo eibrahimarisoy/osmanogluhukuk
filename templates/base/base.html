@@ -1,31 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% include 'base/components/head.html' %}
     <title>Osmanoğlu Hukuk Danışmanlık </title>
 </head>
+
 <body>
     <div class="animationload">
         <div class="loader"></div>
     </div>
-    {% if messages %}
-    
-<ul class="messages">
-    {% for message in messages %}
-    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-    
+    {% include "base/components/nav.html" %}
+
+
     <!-- BACK TO TOP SECTION -->
     <a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
 
     {% block content %}
-      
+
     {% endblock content %}
 
     {% include 'base/components/footer.html' %}
     {% include 'base/components/footer_scripts.html' %}
 </body>
+
 </html>

@@ -1,11 +1,9 @@
 from django.db import models
 
-# Create your models here.
 DEFAULT_STATUS = "draft"
 
 STATUS = [
-    # left side: DB
-    # right side: human-readable name => DB de standart olması için soldaki bilgi DB için
+
     ('draft', 'Taslak'),
     ('published', 'Yayinlandi'),
     ('deleted', 'Silindi'),
@@ -28,5 +26,3 @@ class Carousel(models.Model):
     )
     createt_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
-

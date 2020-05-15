@@ -1,12 +1,5 @@
 {% extends "base/base.html" %}
-
 {% block content %}
-
-
-
-
-
-{% include "base/components/nav.html" %}
 
 <!-- BANNER -->
 <div id="oc-fullslider" class="banner">
@@ -24,66 +17,9 @@
             </div>
         </div>
         {% endfor %}
-
-
     </div>
     <div class="custom-nav owl-nav"></div>
 </div>
-
-<!-- CTA -->
-<!-- <div class="section">
-    <div class="content-wrap py-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-12">
-                    <div class="cta-overlap clearfix">
-                        <div class="body-text pt-3">
-                            <h3 class="text-white">Hukuki süreciniz hakkında profesyonel yardım almak için</h3>
-                        </div>
-                        <div class="body-action">
-                            <a href="#contact" class="btn btn-primary">Bizimle İletişime Geçebilirsiniz. </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- OUR PROMISE? 
-<div class="section">
-    <div class="content-wrap pb-0">
-        <div class="container">
-            <div class="row align-items-end">
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <img src="/static/images/promise.jpg" alt="" class="img-fluid img-border">
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                    <h2 class="section-heading mt-3">
-                        Our Promise?
-                    </h2>
-                    <p class="subheading mb-4">"we always take care of clients seriously"</p>
-
-                    <p>Teritatis et quasi architecto. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo invent. Sed ut
-                        perspiciatis unde omnis iste natus error sitdolor sit amet, consectetuer adipiscing elit, sed
-                        diam nonummy nibh euismod. Praesent interdum est gravida vehicula est node maecenas loareet
-                        morbi a dosis luctus novum est praesent. Magna est consectetur interdum modest dictum.</p>
-                    <blockquote class="quote">
-                        <p class="uk18">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.</p>
-                        <footer class="blockquote-footer">Carol Mongol <cite title="Source Title">Rometheme</cite>
-                        </footer>
-                    </blockquote>
-                    <div class="spacer-content"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
--->
-<!-- WHY CHOOSE -->
 <div class="section">
     <div class="content-wrap">
         <div class="container">
@@ -98,14 +34,14 @@
                 <!-- Item 1 -->
                 {% for practice_area in practice_areas %}
                 <div class="col-12 col-sm-6 col-md-4 mb-4">
-                    <a href="{% url 'single_practice_area' practice_area.slug %}">
+                    <a href="{% url 'practice_area_details' practice_area.slug %}">
                         <div class="box-icon-1 text-center">
                             <div class="icon">
                                 <i class="fa fa-fire"></i>
                             </div>
                             <div class="body-content">
                                 <h3>{{ practice_area.title }}</h3>
-                                <p>{{ practice_area.summary }}</p>
+                                <p >{{ practice_area.content |safe |truncatechars:250  }}</p>
                             </div>
                         </div>
                     </a>
@@ -115,175 +51,4 @@
         </div>
     </div>
 </div>
-
-<!-- MEET OUR ATTORNEY -->
-<!-- <div class="section ">
-    <div class="content-wrap py-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-12">
-                    <h2 class="section-heading text-center mb-4">
-                        Avukatlarımızla Tanışın
-                    </h2>
-                </div>
-
-            </div>
-            <div class="row">
-
-                {% for attorney in attorneys %}
-                <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-                    <div class="rs-team-1">
-                        <div class="media-box">
-                            <img src="{{ attorney.cover_image.url }}" alt="" class="img-fluid">
-                        </div>
-
-                        <div class="body">
-                            <div class="title">{{ attorney.name }}</div>
-                            <div class="position">{{ attorney.position }}</div>
-                            Avukatlara ait sosyal medya hesapları
-                            <div class="sosmed-icon icon-bg-secondary d-inline-flex">
-                                <a href="https://www.facebook.com/{{ attorney.facebook }}/"><i
-                                        class="fa fa-facebook"></i></a>
-                                <a href="https://www.twitter.com/{{ attorney.twitter }}/"><i
-                                        class="fa fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/{{ attorney.instagram }}/"><i
-                                        class="fa fa-instagram"></i></a>
-                                <a href="https://www.linkedin.com/{{ attorney.linkedin }}/"><i
-                                        class="fa fa-linkedin"></i></a>
-                            </div>
-                            -->
-                        <!-- </div>
-                    </div>
-                </div>
-                {% endfor %}
-
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- FAQS -->
-<div class="section mt-0 mb-3">
-    <div class="content-wrap py-0">
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-sm-12 col-md-12">
-                    <h2 class="section-heading">
-                        Sıkça Sorulan Sorular
-                    </h2>
-                </div>
-            </div>
-
-            <div class="row align-items-end mt-5">
-
-                <div class="col-sm-12 col-md-12 col-lg-5">
-                    <img src="/static/images/faq.jpg" alt="" class="img-fluid img-border">
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-7">
-
-                    <div class="accordion rs-accordion" id="accordionExample">
-                        {% for faq in faqs %}
-                        <div class="card">
-                            <div class="card-header" id="heading{{ faq.pk }}">
-                                <h3 class="title">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapse{{ faq.pk }}" aria-expanded="true"
-                                        aria-controls="collapse{{ faq.pk }}">
-                                        {{ faq.question }}
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapse{{ faq.pk }}" class="collapse {% if forloop.first %} show {% endif %}"
-                                aria-labelledby="heading{{ faq.pk }}" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    {{ faq.answer }}
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <!-- end accordion -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- CONTACT
-<div id="contact" class="section bgi-cover-center" data-background="/static/images/contactbackgorund.png">
-    <div class="content-wrap pb-0">
-        <div class="container">
-            <div class="row align-items-end">
-
-                <div class="col-12 col-md-7">
-                    <h2 class="section-heading">
-                        Bizimle İletişime Geçebilirsiniz
-                    </h2>
-                    <form action="/message_submit/" method="post" data-toggle="validator" novalidate="true">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="p_name" placeholder="İsminiz"
-                                        required="">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="p_email"
-                                        placeholder="Email adresiniz" required="">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="p_phone"
-                                        placeholder="Telefon numaranız">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="p_subject" placeholder="Konu">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="p_content" class="form-control" rows="6" placeholder="Mesajınız"></textarea>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group">
-                            <div id="success"></div>
-                            <button class="btn btn-primary">Şimdi Gönder</button>
-                        </div>
-                    </form>
-                    <div class="spacer-content"></div>
-
-                </div>
-
-
-
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% endblock content %}

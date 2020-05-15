@@ -1,25 +1,16 @@
-
 <!-- FOOTER SECTION -->
 <div class="footer" data-background="/static/images/footerbackground.png">
     <div class="content-wrap">
         <div class="container">
-            
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-item">
                         <img src="{{ firm.footer_image.url }}" alt="logo bottom" class="logo-bottom">
                         <div class="spacer-30"></div>
-                        <p>"Kimseyi kabaca yargılamayın; çünkü her azizin geçmişi, her günahkarın bir geleceği vardır." Oscar Wilde</p>
-                        <!-- <div class="sosmed-icon icon-bg-primary d-inline-flex">
-                            <a href="#"><i class="fa fa-facebook"></i></a> 
-                            <a href="#"><i class="fa fa-twitter"></i></a> 
-                            <a href="#"><i class="fa fa-instagram"></i></a> 
-                            <a href="#"><i class="fa fa-pinterest"></i></a> 
-                            <a href="#"><i class="fa fa-linkedin"></i></a> 
-                        </div> -->
+                        <p>"Kimseyi kabaca yargılamayın; çünkü her azizin geçmişi, her günahkarın bir geleceği vardır."
+                            Oscar Wilde</p>
                     </div>
-                </div>					
-
+                </div>
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-item">
                         <div class="footer-title">
@@ -30,7 +21,8 @@
                                 <div class="info-icon">
                                     <span class="fa fa-map-marker"></span>
                                 </div>
-                                <div class="info-text">{{ firm.address }}</div> </li>
+                                <div class="info-text">{{ firm.address }}</div>
+                            </li>
                             <li>
                                 <div class="info-icon">
                                     <span class="fa fa-phone"></span>
@@ -47,39 +39,36 @@
                                 <div class="info-icon">
                                     <span class="fa fa-clock-o"></span>
                                 </div>
-                                <div class="info-text">{{ firm.working_hour }}</div>
+                                <div class="info-text">{{ firm.working_hours }}</div>
                             </li>
                         </ul>
 
                     </div>
                 </div>
-
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-item">
                         <div class="footer-title">
                             Çalışma Alanlarımız
                         </div>
-                        
                         <ul class="list">
-                            {% for practice_area in practice_areas %}
-                            <li><a href="{% url 'single_practice_area' practice_area.slug %}" title="{{ practice_area.title }}">{{ practice_area }}</a></li>
-
-                            {% endfor %}
+                            <li>Sigorta Hukuku</li>
+                            <li>Ceza Hukuku</li>
+                            <li>İş ve Sosyal Güvenlik Hukuku</li>
+                            <li>Aile Hukuku</li>
+                            <li>Gayrimenkul Hukuku</li>
                         </ul>
-                            
                     </div>
                 </div>
-                
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-item">
                         <div class="footer-title">
                             Faydalı Linkler
                         </div>
-                        
                         <ul class="list">
                             <li><a href="{% url 'about' %}" title="About Us">Hakkımızda</a></li>
                             <li><a href="{% url 'attorneys' %}" title="Attorney">Ekibimiz</a></li>
-                            <li><a href="{% url 'practice_areas' %}" title="Practice Areas">Uzmanlık Alanlarımız</a></li>
+                            <li><a href="{% url 'practice_areas' %}" title="Practice Areas">Çalışma Alanlarımız</a>
+                            </li>
                             <li><a href="{% url 'contact' %}" title="Contact Us">İletişim</a></li>
                         </ul>
                     </div>
@@ -87,15 +76,14 @@
             </div>
         </div>
     </div>
-    
     <div class="fcopy">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
-                    <p class="ftex">Copyright 2020 &copy; <span class="color-primary">Lawe Html Template</span>. Designed by <span class="color-primary">Rometheme for Osmanoglu.</span></p> 
+                    <p class="ftex">Copyright 2020 &copy; <span class="color-primary">Lawe Html Template</span>.
+                        Designed by <span class="color-primary">Rometheme for Osmanoglu.</span></p>
                 </div>
             </div>
         </div>
     </div>
-    
 </div>

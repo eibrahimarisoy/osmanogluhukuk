@@ -3,61 +3,48 @@
 {% block content %}
 <!-- LOAD PAGE -->
 
-{% include "base/components/nav.html" %}
 {% include "base/components/banner.html" %}
 
 <!-- CONTENT -->
 <div id="class" class="">
     <div class="content-wrap">
         <div class="container">
-
             <div class="row">
-
-
-                    <div class="single-news col-8">
-                        <div class="media">
-                            <img width=850 height=600 src="{{ blog_post.cover_image.url }}" alt=""
-                                class="rounded img-fluid">
-                        </div>
-                        <h2 class="title">{{ blog_post.title }}</h2>
-                        <div class="meta-date">{{ blog_post.created_date }}</div>
-                        <p>{{ blog_post.content|safe }}</p>
-
-                        <!-- end single blog -->
-
-                        <div class="author-box mt-0">
-                            <div class="body">
-                                <h4 class="media-heading"><span>Yazar :</span>{{ blog_post.author }}</h4>
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!-- end author box -->
-
+                <div class="single-news col-8">
+                    <div class="media">
+                        <img width=850 height=600 src="{{ blog_post.cover_image.url }}" alt=""
+                            class="rounded img-fluid">
                     </div>
+                    <h2 class="title">{{ blog_post.title }}</h2>
+                    <div class="meta-date">{{ blog_post.created_date }}</div>
+                    <p>{{ blog_post.content|safe }}</p>
+                    <!-- end single blog -->
 
-                    <div class="col-4">
-
-                        <div class="widget categories">
-                            <ul class="category-nav">
-                                {% for practice in practice_areas %}
-                                <li><a href="{% url 'single_practice_area' practice.slug %}" >{{ practice.title }}</a></li>
-    
-                                {% endfor %}
-            
-                            </ul>
+                    <div class="author-box mt-0">
+                        <div class="body">
+                            <h4 class="media-heading"><span>Yazar :</span>{{ blog_post.author }}</h4>
                         </div>
-
-                        
+                        <div class="clearfix"></div>
                     </div>
-                    <!-- end sidebar -->
-
+                    <!-- end author box -->
                 </div>
+                <div class="col-4">
+                    <div class="widget categories">
+                        <ul class="category-nav">
+                            <h3 class="text-center">Benzer Blog Yazılarımız</h3>
+                            {% for blog_post in blog_posts %}
+                            <li><a href="{% url 'blog_details' blog_post.slug %}">{{ blog_post.title }}</a></li>
+                            {% endfor %}
 
+                        </ul>
+                    </div>
+                </div>
+                <!-- end sidebar -->
             </div>
         </div>
     </div>
+</div>
 
 
 
-    {% endblock content %}
+{% endblock content %}

@@ -3,7 +3,6 @@
 {% block content %}
 <!-- LOAD PAGE -->
 
-{% include "base/components/nav.html" %}
 {% include "base/components/banner.html" %}
 
 <!-- WELCOME TO LAWE -->
@@ -15,69 +14,16 @@
                     <h2 class="section-heading">
                         Osmanoğlu Hukuk ve Danışmanlık Bürosu
                     </h2>
-                        <p>
+                    <p>
                         Büromuz alanında uzman kadrosu ile hem danışmanlık hem de dava takibi hizmetleri sunmaktadır.
-
                     </p>
                     <p>
-                        Osmanoğlu Hukuk ve Danışmanlık Bürosu en verimli şekilde çözüme ulaşmak amacıyla çalışma alanlarına göre uzmanlaşmış departmanlara ayrılarak organize olmuştur.
+                        Osmanoğlu Hukuk ve Danışmanlık Bürosu en verimli şekilde çözüme ulaşmak amacıyla çalışma
+                        alanlarına göre uzmanlaşmış departmanlara ayrılarak organize olmuştur.
                     </p>
-                    
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <img src="/static/images/about.jpg" alt="" class="img-fluid mt-3">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- FAQS -->
-<div class="section">
-    <div class="content-wrap py-0">
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-sm-12 col-md-12">
-                    <h2 class="section-heading">
-                        Sıkça Sorulan Sorular
-                    </h2>
-                </div>
-            </div>
-
-            <div class="row align-items-end mt-5">
-
-                <div class="col-sm-12 col-md-12 col-lg-5">
-                    <img src="/static/images/faq.jpg" alt="" class="img-fluid img-border">
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-7">
-
-                    <div class="accordion rs-accordion" id="accordionExample">
-                        {% for faq in faqs %}
-                        <div class="card">
-                            <div class="card-header" id="heading{{ faq.pk }}">
-                                <h3 class="title">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapse{{ faq.pk }}" aria-expanded="true"
-                                        aria-controls="collapse{{ faq.pk }}">
-                                        {{ faq.question }}
-                                    </button>
-                                </h3>
-                            </div>
-                            <div id="collapse{{ faq.pk }}" class="collapse {% if forloop.first %} show {% endif %}"
-                                aria-labelledby="heading{{ faq.pk }}" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    {{ faq.answer }}
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-
-                    </div>
-                    <!-- end accordion -->
                 </div>
             </div>
         </div>

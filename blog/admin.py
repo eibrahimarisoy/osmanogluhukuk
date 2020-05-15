@@ -1,13 +1,14 @@
 from django.contrib import admin
-from .models import BlogPost
-# Register your models here.
+from .models import BlogPost, CategoryBlogPost
 
-class BlogPostAdmin(admin.ModelAdmin):
+
+class BlogPostAdmin(admin.ModelAdmin): 
     prepopulated_fields = {"slug": ("title",)}
     list_display = (
         'pk',
         'title',
         'slug',
+        'category',
         'status',
     )
     list_filter = ('status',)
@@ -15,4 +16,14 @@ class BlogPostAdmin(admin.ModelAdmin):
         'status',
     )
 
+
+class CategoryBlogPostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+    list_display = (
+        'pk',
+        'title',
+    )
+
+
 admin.site.register(BlogPost, BlogPostAdmin)
+admin.site.register(CategoryBlogPost, CategoryBlogPostAdmin)

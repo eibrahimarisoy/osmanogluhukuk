@@ -1,13 +1,14 @@
 from django.contrib import admin
 from .models import Attorney, Firm
-# Register your models here.
+
+
 class AttorneyAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
     list_display = (
         'pk',
         'number',
         'name',
-        'slug',
+        'email',
         'position',
         'status',
     )
@@ -15,8 +16,8 @@ class AttorneyAdmin(admin.ModelAdmin):
     list_editable = (
         'number',
         'status',
-
     )
+
 
 class FirmAdmin(admin.ModelAdmin):
     list_display = (
@@ -26,7 +27,7 @@ class FirmAdmin(admin.ModelAdmin):
         'phone',
         'email',
         'address',
-        'working_hour',
+        'working_hours',
     )
 
     list_editable = (
@@ -34,15 +35,8 @@ class FirmAdmin(admin.ModelAdmin):
         'phone',
         'email',
         'address',
-        'working_hour',
+        'working_hours',
     )
-
-
-
-
-
-
-
 
 
 admin.site.register(Attorney, AttorneyAdmin)
